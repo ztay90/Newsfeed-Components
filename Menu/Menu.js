@@ -33,3 +33,60 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+function burgerComponent(menuItems) {
+  const menuPanel = document.createElement('div')
+  menuPanel.classList.add('menu');
+
+  const menuUl = document.createElement('ul')
+  menuPanel.appendChild(menuUl);
+
+
+  // Li's ///////////////////////////////////////
+  const liOne = document.createElement('li')
+  liOne.textContent = 'Students';
+
+  menuUl.appendChild(liOne);
+
+  const liTwo = document.createElement('li')
+  liTwo.textContent = 'Faculty';
+
+  menuUl.appendChild(liTwo);
+
+  const liThree = document.createElement('li')
+  liThree.textContent = "What's New";
+
+  menuUl.appendChild(liThree);
+
+  const liFour = document.createElement('li')
+  liFour.textContent = 'Tech Trends';
+
+  menuUl.appendChild(liFour);
+
+  const liFive = document.createElement('li')
+  liFive.textContent = 'Music';
+
+  menuUl.appendChild(liFive);
+
+  const liSix = document.createElement('li')
+  liSix.textContent = 'Log Out';
+
+  menuUl.appendChild(liSix);
+  ////////////////////////////////////////////////
+
+  const menuBtn = document.querySelector('.menu-button');
+  menuBtn.addEventListener('click', () => {
+    menuPanel.classList.toggle('menu--open');
+  })
+  
+  return menuPanel;
+}
+
+const menuImg = document.querySelector('.header');
+  const burgerMenu = burgerComponent(menuItems)
+
+  menuImg.appendChild(burgerMenu)
+
+
+
+
